@@ -85,7 +85,11 @@ public class CobolParser {
   }
 
   public Map<String, String> getFileSpecs() {
+    Map<String, String> fileSpecs = new HashMap<>();
 
+    // Bonus assignment - your code here
+
+    return fileSpecs;
   }
 
   public void printCurrentLines() {
