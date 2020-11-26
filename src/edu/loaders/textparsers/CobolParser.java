@@ -93,7 +93,7 @@ public class CobolParser {
   }
 
   public void printCurrentLines() {
-    parsedLines.forEach(System.out::println);
+    parsedLines.forEach(System.out::printf);
   }
 
 }

@@ -37,7 +37,7 @@ public class BookCSV extends CommonCSV {
        }
      }
    } catch (IOException ex) {
-     System.out.println("Could not load file <" + bookCSVFile + ">\n" + ex);
+     System.out.printf("Could not load file <" + bookCSVFile + ">\n" + ex);
    }
    return books;
   }
@@ -49,7 +49,7 @@ public class BookCSV extends CommonCSV {
         System.out.print(book.toString());
       }
     } else {
-      System.out.println("No books loaded.");
+      System.out.printf("No books loaded.");
     }
 
   }

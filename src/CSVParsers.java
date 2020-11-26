@@ -6,19 +6,19 @@ public class CSVParsers {
   public static void main(String args[]) throws IOException {
     BookCSV books = new BookCSV("./data/books.csv");
     for (Book b : books.readCSV()) {
-      System.out.println(".......");
-      System.out.println(b.getAuthor());
-      System.out.println(".......");
+      System.out.printf(".......");
+      System.out.printf(b.getAuthor());
+      System.out.printf(".......");
     };
-    System.out.println(books.books.get(0).getTitle());
+    System.out.printf(books.books.get(0).getTitle());
 
     books.printCSV();
     books.writeCSV();
 
     CobolParser cp = new CobolParser("legacyHorror.cob");
     // cp.printCurrentLines();
-    System.out.println("data file is: " + cp.getDataFileNoRegex());
-    System.out.println("\tand with regex still: " + cp.getDataFileRegex());
+    System.out.printf("data file is: " + cp.getDataFileNoRegex());
+    System.out.printf("\tand with regex still: " + cp.getDataFileRegex());
 
   }
 
