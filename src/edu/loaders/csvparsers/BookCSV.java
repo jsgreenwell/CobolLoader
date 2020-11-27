@@ -13,7 +13,6 @@ import java.util.List;
 /**
  * This class is to read, print, and write CSV file.
  */
-
 public class BookCSV extends CommonCSV {
 
   private String bookCSVFile = "";
