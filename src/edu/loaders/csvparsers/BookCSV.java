@@ -10,6 +10,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is to read, print, and write CSV file.
+ */
+
 public class BookCSV extends CommonCSV {
 
   private String bookCSVFile = "";
@@ -20,6 +24,12 @@ public class BookCSV extends CommonCSV {
     bookCSVFile = file;
   }
 
+  /**
+   * This method reads the given CSV file in the constructor, converts every line into Book object,
+   * and saves it into a list of Book objects declared above.
+   * @return the list of Book objects.
+   * @throws FileNotFoundException if the file is not present in the file/wrongly inputted.
+   */
   @Override
   public List<Book> readCSV() throws FileNotFoundException {
     FileReader reader = new FileReader(bookCSVFile);
@@ -33,6 +43,7 @@ public class BookCSV extends CommonCSV {
          // Skip first line
          headers++;
        } else {
+         // To avoid case-sensitivity problems, toLowerCase() is used
          books.add(new Book(line.toLowerCase().split(getDelimiter())));
        }
      }
@@ -42,6 +53,9 @@ public class BookCSV extends CommonCSV {
    return books;
   }
 
+  /**
+   * This method prints the content of Book objects from the list provided in the constructor, if list is not empty.
+   */
   @Override
   public void printCSV() {
     if (books.size() > 0) {
@@ -51,9 +65,13 @@ public class BookCSV extends CommonCSV {
     } else {
       System.out.printf("No books loaded.");
     }
-
   }
 
+  /**
+   * This methods writes a CSV file called newBooks with the content of Book objects
+   * from the list provided in the constructor.
+   * @throws IOException.
+   */
   @Override
   public void writeCSV() throws IOException {
     File outFile = new File("./data/newBooks.csv");
