@@ -38,10 +38,36 @@ public class Book {
     setPrice(Double.parseDouble(csvLine[6]));
   }
 
+
+  public Book(long isbn,String title,String author) {
+	  this.isbn = isbn;
+	  this.title = title;
+	  this.author = author;
+  }
+  
+  public Book(long isbn,String title,double price) {
+	  this.isbn = isbn;
+	  this.title = title;
+	  setPrice(price);
+  }
+  
+  public Book(long isbn,String title,String author,double price) {
+	  this(isbn,title,author);
+	  setPrice(price);
+  }
+  
+  
+  public Book(long isbn, String title, String author, String genre) {
+	this(isbn,title,author);
+	setGenre(genre);
+  }
+
+ 
   public Book() {
 
   }
-
+  
+  
   public String getAuthor() { return author; }
 
   public int getInternalPrice() {
