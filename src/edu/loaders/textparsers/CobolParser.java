@@ -36,6 +36,7 @@ public class CobolParser {
         .filter(l -> !l.startsWith("*")) // ignore comments
         .map(String::toLowerCase) // make everything lowercase
         .collect(Collectors.toList());
+    stream.close();
   }
 
   public String getDataFileNoRegex() {
