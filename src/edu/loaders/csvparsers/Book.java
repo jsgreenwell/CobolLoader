@@ -4,19 +4,22 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+//Establishes Book class
 public class Book {
   protected long isbn = 0;
   protected String title = "unknown";
   protected String author = "unknown";
   protected int pages = 0;
   protected String editor = "none";
-
+  
+//Sets HashSet of different possible genres of the book
   private String genre = "";
   private final Set<String> GENRES = new HashSet<>(Arrays.asList("fantasy", "non-fiction",
       "manga", "instructional", "scifi", "folktales", "romance", "high-fantasy", "mystery"));
 
   private int internalPrice = 0;
 
+  //Introduces all components that a book is linked to/possesses
   public Book(long isbn, String title, String author, int pages, String editor,
       String genre, double price) {
     this.isbn = isbn;
@@ -41,7 +44,7 @@ public class Book {
   public Book() {
 
   }
-
+//Retrieves Author, price, and genre of the book
   public String getAuthor() { return author; }
 
   public int getInternalPrice() {
@@ -72,5 +75,6 @@ public class Book {
         + genre + "'," + getPrice() + "\n";
   }
 
+//Retrieves title of respective book
   public String getTitle() { return title;  }
 }
