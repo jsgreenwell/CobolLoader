@@ -3,7 +3,10 @@ package edu.loaders.csvparsers;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-
+/*
+programm to load information from a cvs file  
+All the information needed about a book in order to sell it at the end
+*/
 public class Book {
   protected long isbn = 0;
   protected String title = "unknown";
@@ -11,12 +14,13 @@ public class Book {
   protected int pages = 0;
   protected String editor = "none";
 
+  //String book's genre info
   private String genre = "";
   private final Set<String> GENRES = new HashSet<>(Arrays.asList("fantasy", "non-fiction",
       "manga", "instructional", "scifi", "folktales", "romance", "high-fantasy", "mystery"));
 
   private int internalPrice = 0;
-
+//string all the book's info
   public Book(long isbn, String title, String author, int pages, String editor,
       String genre, double price) {
     this.isbn = isbn;
@@ -27,7 +31,7 @@ public class Book {
     setGenre(genre);
     setPrice(price);
   }
-
+//Method for comma separated values
   public Book(String[] csvLine) {
     isbn = Long.parseLong(csvLine[0]);
     title = csvLine[1].substring(1, csvLine[1].length()-1);
@@ -38,6 +42,7 @@ public class Book {
     setPrice(Double.parseDouble(csvLine[6]));
   }
 
+ // method to calculate book's price to sell
   public Book() {
 
   }
@@ -63,7 +68,7 @@ public class Book {
       this.genre = "other";
     }
   }
-
+//Displays book info in order to sell it
   @Override
   public String toString() {
     return isbn + ",'" + title + "','"
@@ -74,3 +79,4 @@ public class Book {
 
   public String getTitle() { return title;  }
 }
+//end class
