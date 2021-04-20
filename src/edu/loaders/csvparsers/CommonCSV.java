@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 
 public abstract class CommonCSV {
+  // add comments on why "," as default and what delimiter means
   private String delimiter;
 
   public CommonCSV() {
@@ -19,6 +20,7 @@ public abstract class CommonCSV {
     return delimiter;
   }
 
+  // abstract methods to always be overridden
   public abstract List readCSV() throws FileNotFoundException;
   public abstract void printCSV();
   public abstract void writeCSV() throws IOException;
