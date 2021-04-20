@@ -4,6 +4,7 @@ import java.io.IOException;
 
 public class CSVParsers {
   public static void main(String args[]) throws IOException {
+    // TODO: Add comments
     BookCSV books = new BookCSV("./data/books.csv");
     for (Book b : books.readCSV()) {
       System.out.println(".......");
