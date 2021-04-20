@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Book {
+  // Need to add comments explaining these variables (and that this represents a book)
   protected long isbn = 0;
   protected String title = "unknown";
   protected String author = "unknown";
@@ -41,6 +42,7 @@ public class Book {
   public Book() {
 
   }
+  // Need to add comment for each of these methods (simple ones that explain "getsAuthor"...gets the author)
 
   public String getAuthor() { return author; }
 
