@@ -46,14 +46,14 @@ public class CobolParser {
 
     for (int i=0; i<parsedLines.size(); i++) {
       if (parsedLines.get(i).startsWith("    select")) {
-        /* match exact start of line because we cannot match randomword.dat
-         matching .dat would be problematic too (what if variable set for file extension)
+        /* match exacting start of line because we cannea match randomword.dat
+         matching .dat would be problomatic to (what if variable set for file extinseon)
          happened: had infileextension = ".dat" outfileextension = ".csv" so lots of bad results
          */
 
         String[] words = parsedLines.get(i).split(" ");
-        // luckily in this case the exact word is the last word in this list
-        // note the substring is to get rid of double quotes
+        // luckily in this case the exact word is teh last word in this list
+        // note teh substring is to get rid of double quotes
         String datafile = words[words.length-1];
         return datafile.substring(1, datafile.length()-1);
       }
@@ -63,16 +63,16 @@ public class CobolParser {
 
   public String getDataFileRegex() {
     // So we know that the file is a *.dat file so lets just find that
-    // Compile because that will speed up operations later (we have to run it multiple times)
+    // Compile because that will speed up operation later (we have to run it multiple time)
 
     Pattern fileP = Pattern.compile("\\w+.dat");
     // \w+ means one or more alphanumeric character using \\ because in java "\" is special char
     Matcher match;  // define early so we don't have to recreate over and over in for loop
 
     for (String lines : parsedLines) {
-      // So loop through each line in data file and then just match/capture the filename
+      // So loop through each line in data file and the just match/capture teh filename
 
-      // setup our matcher using the earlier compiled pattern
+      // setup our matcher using teh earlier compiled pattern
       match = fileP.matcher(lines);
       if (match.find()) {
         // while (match.find()) will loop through all matches - better than contains
