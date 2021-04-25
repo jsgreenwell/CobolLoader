@@ -52,8 +52,8 @@ public class CobolParser {
          */
 
         String[] words = parsedLines.get(i).split(" ");
-        // luckily in this case the exact word is teh last word in this list
-        // note teh substring is to get rid of double quotes
+        // luckily in this case the exact word is the last word in this list
+        // note the substring is to get rid of double quotes
         String datafile = words[words.length-1];
         return datafile.substring(1, datafile.length()-1);
       }
@@ -70,7 +70,7 @@ public class CobolParser {
     Matcher match;  // define early so we don't have to recreate over and over in for loop
 
     for (String lines : parsedLines) {
-      // So loop through each line in data file and the just match/capture teh filename
+      // So loop through each line in data file and the just match/capture the filename
 
       // setup our matcher using teh earlier compiled pattern
       match = fileP.matcher(lines);
