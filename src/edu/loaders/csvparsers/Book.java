@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Book {
-  // Need to add comments explaining these variables (and that this represents a book)
+  // information need to search, sort, and checkout out a book
   protected long isbn = 0;
   protected String title = "unknown";
   protected String author = "unknown";
@@ -42,22 +42,23 @@ public class Book {
   public Book() {
 
   }
-  // Need to add comment for each of these methods (simple ones that explain "getsAuthor"...gets the author)
 
+  // gets the author
   public String getAuthor() { return author; }
 
+  // returns interal price
   public int getInternalPrice() {
     return internalPrice;
   }
-
+  // returns price
   public double getPrice() {
     return internalPrice / 100.0;
   }
-
+  // sets price
   public void setPrice(double price) {
     this.internalPrice = (int) (price * 100);
   }
-
+  // sets genre, if none then sets to default "other"
   public void setGenre(String genre) {
     if (GENRES.contains(genre)) {
       this.genre = genre;
@@ -65,7 +66,7 @@ public class Book {
       this.genre = "other";
     }
   }
-
+  // returns a list of all the information on the book
   @Override
   public String toString() {
     return isbn + ",'" + title + "','"
@@ -73,6 +74,6 @@ public class Book {
         + ",'" + editor + "','"
         + genre + "'," + getPrice() + "\n";
   }
-
+  // returns tittle
   public String getTitle() { return title;  }
 }
