@@ -74,6 +74,6 @@ public class Book {
         + ",'" + editor + "','"
         + genre + "'," + getPrice() + "\n";
   }
-  // returns tittle
+  // returns title
   public String getTitle() { return title;  }
 }
