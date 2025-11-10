@@ -4,4 +4,4 @@ With some standard CSV used to explain packaging (and the build-ing of libarys).
 
 Needs some gramer fixs and comments added (used in school project to alow students to learn Git/Github).
 
-Used as a teaching example of regex with Java - not meant as efficient model.
+Used as a teaching example of regex with Java - not meant as efficient model (its not).
